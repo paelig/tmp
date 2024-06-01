@@ -1,0 +1,26 @@
+@startuml deployment
+skinparam conditionStyle InsideDiamond
+|#pink|Пользователь|
+start
+:Вставить карту;
+:Ввести pin-код;
+|#lightblue|Банкомант|
+if (pin-код верен?) is (да) then
+|#pink|Пользователь|
+:Выбор команды;
+|#lightblue|Банкомант|
+if (печать справки) is (да) then
+:Вывод справки;
+else if (снять деньги) is (да) then
+:Снятие денег;
+else
+:Положить денеги;
+endif;
+endif;
+
+|#pink|Пользователь|
+:Возвращеие карты;
+:Выход;
+
+stop
+@enduml
