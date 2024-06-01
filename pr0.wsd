@@ -1,3 +1,21 @@
 @startuml "pr0"
 
+Пользователь as p
+Банкомат as b
+
+package  Банкомат{
+    usecase "Снять наличные со счёта" as uc1
+    usecase "Печать справки об остатке" as uc2
+    usecase "Положить наличные на счёт" as uc3
+}
+
+p --> uc1
+p --> uc2
+p --> uc3
+
+
+b -up- uc1
+b -up- uc2: вывод справки
+b -up- uc3
+
 @enduml
